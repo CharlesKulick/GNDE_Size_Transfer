@@ -1,0 +1,24 @@
+model:
+  model_dims: [1, 16, 1]
+  K: 2
+  activation: 'Tanh'
+  method: 'rk4'
+  atol: 0.0001
+  rtol: 0.0001
+  adjoint: False
+
+training:
+  learning_rate: 0.001
+  num_epochs: 100
+  epochs_btw_val_runs: 5
+  epochs_btw_checkpoints: 10
+  scheduler_factor: 0.1
+  scheduler_patience: 25
+  early_stopping_patience: 50
+
+data:
+  graphon_resolution: 2500
+
+  # Time integration settings
+  end_time: 5.0
+  num_timesteps: 5

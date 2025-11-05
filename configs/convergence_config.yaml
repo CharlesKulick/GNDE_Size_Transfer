@@ -1,0 +1,17 @@
+general:
+  graphon_resolution: 5000
+  graph_sizes_min: 550
+  graph_sizes_max: 1950
+  graph_sizes_total: 15
+  fourier_length: 10
+  integration_end_time: 1
+  test_points_for_error: 2000
+  time_points: 10
+
+model:
+  model_dims: [1, 1, 1]
+  K: 2
+  method: 'dopri5'
+  atol: 0.001
+  rtol: 0.0001
+  adjoint: False
