@@ -44,7 +44,7 @@ Then run the file:
 
 ```./Dynamics_Convergence.sh```
 
-For basic changes, such as choosing the type of dynamics, graphon of interest, range of graph sizes, and amount of training data, modify the top of the bash script. Many more tunable hyperparameters are also located in the associated [config file](configs/dynamics_config).
+For basic changes, such as choosing the type of dynamics, graphon of interest, range of graph sizes, and amount of training data, modify the top of the bash script. Many more tunable hyperparameters are also located in the associated [config file](configs/dynamics_config.yaml).
 
 To run a transfer analysis on the results of the GNDE dynamics learning code, run [dynamics_transfer.py](dynamics_transfer.py). Provide matchng arguments as used for GNDE training to ensure the correct checkpoints and data generation are used, with the following pattern:
 
