@@ -16,18 +16,18 @@ The DGL library must also be installed; for the correct version of DGL, run:
 
 ## GNDE Size Transferability Usage
 
-To run our suite of GNDE size transferability examples from [our original paper](https://arxiv.org/abs/2510.03923), the easiest method is executing [Graphon_GNDE_Convergence.sh](Graphon_GNDE_Convergence.sh). This will automatically run all three convergence examples sequentially. To do this, first make the bash file executable from your terminal:
+To run our suite of GNDE size transferability examples from [our original paper](https://arxiv.org/abs/2510.03923), the easiest method is executing [Graphon_NDE_Convergence.sh](Graphon_NDE_Convergence.sh). This will automatically run all three convergence examples sequentially. To do this, first make the bash file executable from your terminal:
 
-```chmod +x Graphon_GNDE_Convergence.sh```
+```chmod +x Graphon_NDE_Convergence.sh```
 
 Then simply executing the file will run the experiments:
 
-```./Graphon_GNDE_Convergence.sh```
+```./Graphon_NDE_Convergence.sh```
 
 For more control over specifics, run the [convergence experiment source file](convergence_experiment.py) directly, passing in arguments in the following pattern:
 
 ```bash
-python convergence_experiment.py --graphon <graphon_type> --graphon_parameter <parameter_value> [--num_random_inits <num_inits>]
+python convergence_experiment.py --graphon <graphon_type> --graphon_parameter <parameter_value> --num_random_inits <num_inits>
 ```
 
 See also the hyperparameters located in the associated [config file](configs/convergence_config.yaml).
@@ -46,9 +46,8 @@ Then run the file:
 
 For basic changes, such as choosing the type of dynamics, graphon of interest, range of graph sizes, and amount of training data, modify the top of the bash script. Many more tunable hyperparameters are also located in the associated [config file](configs/dynamics_config).
 
-To run a transfer analysis of the results of the GNDE dynamics learning code, run [dynamics_transfer.py](dynamics_transfer.py). Provide matchng arguments as used for GNDE training to ensure the correct checkpoints and data generation are used, with the following pattern:
+To run a transfer analysis on the results of the GNDE dynamics learning code, run [dynamics_transfer.py](dynamics_transfer.py). Provide matchng arguments as used for GNDE training to ensure the correct checkpoints and data generation are used, with the following pattern:
 
-## Usage
 ```bash
 python dynamics_transfer.py --dynamics <dynamics_type> --nvals <training_graph_sizes> --seeds <seeds_for_training> --N <large_graph_size> --use_weighted <weighted_flag> --graphon <graphon_type> --graphon_parameter <parameter_value> --num_train_trajectories <training_trajectories> --fourier_degree <degree_for_initial_conditions> --num_test_conditions <test_ics_for_analysis> --dropout <dropout_value>
 ```
